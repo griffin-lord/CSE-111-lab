@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class primornoto{
+    public static void main(String[] args) {
+        Scanner sca= new Scanner(System.in);
+        System.out.println("Enter the upper limit: ");
+        int lim=sca.nextInt();    
+        boolean[] isPrime = new boolean[lim+ 1];
+        for (int i=0;i<=limit;i++) {
+            if (i==0||i ==1) {
+                isPrime[i]=false;
+            } 
+            else {
+                isPrime[i] =true;
+            }
+        }
+        for (int k= 2; k*k <= lim; k++) {
+            if (isPrime[k]) {
+                for (int j = k * k; j <= lim; j += k) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+        System.out.println("Prime numbers up to " + lim + ":");
+        for (int l= 2;l<= lim; l++) {
+            if (isPrime[l]) {
+                System.out.print(l+ " ");
+            }
+        }
+    }
+}
+

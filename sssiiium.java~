@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class sssiiium {
+   public static void main(String[] args) {
+        Scanner sca = new Scanner(System.in);
+         System.out.println("Enter the first word: ");
+           String wordq = scanner.next();
+        System.out.println("Enter the second word: ");
+             String wordp = sca.next();
+        String newst= wordq+ " " +wordp;
+                int summ= 0;
+        for (int i = 0; i <newst.length(); i++) {
+              sum += newst.charAt(i);
+        }
+        System.out.println("Concatenated String: " +newst);
+          System.out.println("Sum of ASCII values: " +summ);
+    }
+}

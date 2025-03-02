@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Prev {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a string in small letters: ");
+        String wor = sc.nextLine();
+        String result = new String();
+        for (int i = 0; i < wor.length(); i++) {
+            char cha =wor.charAt(i);
+            if (cha>= 'a' && cha<= 'z') {
+                char prechar = (cha == 'a') ? 'z' :(char) (cha - 1);
+                result+=prechar;
+            }
+            else {
+                result+=cha;
+            }
+        }
+        System.out.println("Output string with previous alphabets: " + result.toString());
+    }
+}
+
