@@ -1,0 +1,5 @@
+public class BankAccount{
+  public void printDetails(int n,String m){
+    System.out.println("Account No: "+n);
+    System.out.println("Type: "+n);
+  }
