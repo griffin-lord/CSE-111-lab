@@ -1,0 +1,8 @@
+public class Shelf{
+  public int boo;
+   public int capa;
+   public void showDetails(){
+     System.out.println("Shelf capacity: "+boo);
+     System.out.println("Number of books: "+capa);
+   }
+}
