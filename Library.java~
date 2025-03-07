@@ -1,0 +1,27 @@
+public class Library{
+  public String bo;
+  public int cou;
+  public String book;;
+  int cap=0;
+  String nam=" ";
+  public void setBookCapacity(int n){
+    this.cap+=n;
+  }
+  public void addBook(String bo){
+    this.bo=bo;
+    nam+=bo;
+    if(cou<cap){
+    System.out.println("Book "+bo+" added to the library");
+    cou++;
+    }
+      else {
+      System.out.println("Exceeds maximum capacity. You can't add more than"+cap+"books");
+      }
+  }
+  public void printDetail(){
+    System.out.println("Maximum Capacity:"+cap);
+    System.out.println("Total Books:"+cou);
+    System.out.println("Book list:"+nam);
+
+  }
+}
