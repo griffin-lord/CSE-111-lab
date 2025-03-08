@@ -1,0 +1,51 @@
+public class Cart{
+  public String tach;
+  public int cart;
+   double carbill=0;
+   double discount=0;
+  double tabbill=0;
+   double chaibill=0;
+    double stobill=0;
+  public void create_cart(int cart){
+    this.cart=cart;
+  }
+  public void giveDiscount(double discount){
+    this.discount=discount;
+  }
+    public void addItem(String tabl,double numbe){
+      carbill+=numbe;
+      if (tabl == "Table"){
+      tabbill+=numbe;
+    }
+      else if (tabl == "Chair"){
+        carbill+=numbe;  
+    }
+       else{
+        stobill+=numbe;
+       }
+  }
+    public void addItem(double numbe,String tabl){
+      carbill+=numbe;
+      if (tabl == "Table"){
+      tabbill+=numbe;
+    }
+      else if (tabl == "Chair"){
+        carbill+=numbe;  
+    }
+       else{
+        stobill+=numbe;
+       }
+  }
+    public void cartDetails(){
+      System.out.println("Your cart:"); 
+        System.out.println(" Table- "+tabbill);
+       System.out.println(" Chair - "+chaibill);
+        System.out.println(" Discount Applied: "+discount+"%");
+        if (discount == 0.0){ 
+        System.out.println("Total price: "+carbill);
+        }
+        else{
+          System.out.println("Total price: "+(carbill *discount/100));
+        }
+    }
+}
