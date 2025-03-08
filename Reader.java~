@@ -1,0 +1,32 @@
+public class Reader{
+  public String name;
+  int cap=0;
+  public String[] bName = new String[3];
+  public int createReader(String nam, int capa){
+    this.nam=name;
+    this.capa=cap;
+    return ("A new reader is created!");
+  }
+  
+  public void readerInfo(){
+    System.out.println("Name: "+name);
+    System.out.println("Capacity: "+cap);
+    for (int i=0; i<3; i++){
+    System.out.println("Books: "+bname[i]);
+    }
+    if(cap == 0){
+    System.out.println("No books added yet");
+    }
+  }
+  
+  public void addBook(String name){
+    if(cap<=3){
+      for (int i=0; i<3; i++){
+        bname[i]=name;
+        cap++;
+      }
+      else{
+       System.out.println("No more capacity");
+      }
+  }
+  
