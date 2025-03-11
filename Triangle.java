@@ -1,0 +1,42 @@
+public class Triangle{
+  public int a;
+  public int b;
+  public int c;
+  public int perimeter;
+   
+    public Triangle(int a1, int b1,int c1){
+    a=a1;
+    b=b1; 
+    c=c1;
+  }
+  
+    public String printTriangleType(){
+      if (a==b && b==c && a==c){
+        return "This is an Equilateral Triangle.";
+      }
+      else if( a==b || b==c || a==c){
+        return "This is an Isosceles Triangle.";
+    }
+      else{
+        return "This is an Scalene Triangle.";
+      }
+    }
+    
+    public void triangleDetails(){
+      System.out.println("Three sides of the triangle are: "+a+b+c);
+      perimeter=a+b+c;
+      System.out.println("Perimeter: "+perimeter);
+    }
+    
+    public void compareTrinagles(Triangle obj) {
+        if (this == obj) {
+            System.out.println("These two triangle objects have the same address.");
+        } else if (this.a ==obj.a && this.b ==obj.b && this.c ==obj.c) {
+            System.out.println("Addresses are different but the sides of the triangles are equal.");
+        } else if ((this.a + this.b + this.c) == (obj.a + obj.b +obj.c)) {
+            System.out.println("Only the perimeter of both triangles is equal.");
+        } else {
+            System.out.println("Addresses, length of the sides and perimeter all are different.");
+        }
+    }
+}
