@@ -1,0 +1,9 @@
+public class  Assignment{
+ public int tasks;
+ public String difficulty;
+ public boolean submission;
+ 
+ public void printDetails(){
+   System.out.println("Number of tasks:"+tasks+"Difficulty level:"+difficulty+"Submission required:"+submission);
+ }
+}

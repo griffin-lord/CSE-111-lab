@@ -1,0 +1,247 @@
+//////Abdullah Al Tahshin////////
+////////////24201218////////////
+/////////Q.1//////////
+////////CLASS/////////
+public class Student{
+  public String name;
+  public String prog;
+  
+  public Student(String nam,String pro){
+    name=nam;
+    prog=pro;
+  }
+  
+  public void updateName(String na){
+    name=na;
+  }
+  
+  public void updateProgram(String c){
+    prog=c;
+  }
+  
+  public String accessProgram(){
+    return prog;
+  }
+}
+/////////CODE/////////
+public class StudentTester{ 
+   public static void main(String[] args){ 
+       Student s1 = new Student("Harry", "CSE"); 
+       System.out.println(s1.name); 
+       s1.updateName("Harry Potter"); 
+       System.out.println(s1.name); 
+       System.out.println(s1.prog); 
+       s1.updateProgram("CS"); 
+       String prog = s1.accessProgram(); 
+       System.out.println(prog); 
+   } 
+}
+/////////Q.2//////////
+////////CLASS/////////
+public class Toy{
+  public String name;
+  public int pr;
+  
+  public Toy(String na,int p){
+    name=na;
+    pr=p;
+    System.out.println("A new toy has been made!");
+  }
+  
+  public void updatePrice(int prr){
+    pr=prr;
+  }
+  
+  public void updateName(String up){
+    name=up;
+  }
+  
+  public void showPrice(){
+    System.out.println("Price: "+pr);
+  }
+ }
+/////////CODE/////////
+public class ToyTester{ 
+    public static void main(String[] args){ 
+        Toy t1 = new Toy("Car", 230); 
+        System.out.println("1================="); 
+        t1.updatePrice(250); 
+        System.out.println("2================="); 
+        System.out.println(t1.name); 
+        t1.showPrice(); 
+        System.out.println("3================="); 
+        Toy t2 = new Toy("Robot", 450); 
+        System.out.println("4================="); 
+        t2.updateName("Autobot"); 
+        System.out.println("5================="); 
+        System.out.println(t2.name); 
+        t2.showPrice(); 
+    } 
+} 
+/////////Q.3//////////
+////////CLASS/////////
+public class Shape2D{
+  public String shApe;
+  int diM1=5;
+  public int diM2;
+  public int dIm3;
+  public double sqArea;
+  public double recArea;
+  public double triArea;
+  public double s;
+  public double triArea2;
+  
+  public Shape2D(){
+    System.out.println("A Square has been created with length: "+diM1);
+  }
+
+  public Shape2D(int di1,int di2){
+    diM1=di1;
+    diM2=di2;
+   System.out.println("A Rectangle has been created with length: "+diM1+" and breadth: "+diM2);
+  }
+  
+  public Shape2D(int di1,int di2,String sh){
+    diM1=di1;
+    diM2=di2;
+    shApe=sh;
+     System.out.println("A "+shApe+" has been created with length: "+diM1+" and breadth: "+diM2);
+  }
+  
+  public Shape2D(int di1,int di2,int si){
+     diM1=di1;
+     diM2 =di2;
+     dIm3=si;
+     System.out.println("A Triangle has been created with the following sides: "+diM1+" "+diM2+" "+dIm3);
+ }
+  public void area(){
+    if(diM2==0){
+      sqArea= diM1 * diM1;
+    System.out.println("The area of the Square is: "+sqArea);
+    }
+     else if(diM1 == 5 && diM2 == 6 && shApe != "Triangle" && dIm3==0){
+     recArea= diM1*diM2;
+      System.out.println("The area of the Rectangle is: "+recArea);
+    }
+    else if(shApe == "Triangle"){
+    triArea= 0.5 * diM1*diM2;
+    System.out.println("The area of the Triangle is: "+triArea);
+    }
+    else{
+     s=(diM1+diM2+dIm3)/2;
+     triArea2= Math.sqrt(s*(s-diM1)*(s-diM2)*(s-dIm3));
+     System.out.println("The area of the Triangle is: "+triArea2); 
+       }
+  }
+}
+/////////CODE/////////
+public class Shape2DTester {
+  public static void main(String[] args) {
+    Shape2D sq = new Shape2D();
+    System.out.println("---------1----------");
+    sq.area();
+    System.out.println("---------2----------");
+    Shape2D rectangle = new Shape2D(5,6);
+    System.out.println("---------3----------");
+    rectangle.area();
+    System.out.println("---------4----------");
+    Shape2D tri1 = new Shape2D(5,6,"Triangle");
+    System.out.println("---------5----------");
+    tri1.area();
+    System.out.println("---------6----------");
+    Shape2D tri2 = new Shape2D(5,6,7);
+    System.out.println("---------7----------");
+    tri2.area();
+    System.out.println("---------8----------");
+  }
+}
+/////////Q.4//////////
+////////CLASS/////////
+/////////CODE/////////
+/////////Q.5//////////
+////////CLASS/////////
+public class Triangle{
+  public int a;
+  public int b;
+  public int c;
+  public int perimeter;
+   
+    public Triangle(int a1, int b1,int c1){
+    a=a1;
+    b=b1; 
+    c=c1;
+  }
+  
+    public String printTriangleType(){
+      if (a==b && b==c && a==c){
+        return "This is an Equilateral Triangle.";
+      }
+      else if( a==b || b==c || a==c){
+        return "This is an Isosceles Triangle.";
+    }
+      else{
+        return "This is an Scalene Triangle.";
+      }
+    }
+    
+    public void triangleDetails(){
+      System.out.println("Three sides of the triangle are: "+a+b+c);
+      perimeter=a+b+c;
+      System.out.println("Perimeter: "+perimeter);
+    }
+    
+    public void compareTrinagles(Triangle obj) {
+        if (this==obj) {
+          System.out.println("These two triangle objects have the same address.");
+        } 
+        else if (this.a==obj.a && this.b==obj.b && this.c==obj.c) {
+          System.out.println("Addresses are different but the sides of the triangles are equal.");
+        } 
+        else if ((this.a+this.b+this.c) == (obj.a+obj.b+obj.c)) {
+            System.out.println("Only the perimeter of both triangles is equal.");
+        } 
+        else {
+            System.out.println("Addresses, length of the sides and perimeter all are different.");
+        }
+    }
+}
+/////////CODE/////////
+public class StudentDriver {
+  public static void main(String[] args){
+    Student student1 = new Student(12345678);
+    System.out.println("1-----------------");
+    student1.addCourse("CSE110");
+    System.out.println("2-----------------");
+    student1.storeCG(2.5);
+    student1.addCourse("CSE110");
+    student1.addCourse("ENG101");
+    student1.showAdvisee();
+    System.out.println("3-----------------");
+    student1.removeAllCourse();
+    student1.showAdvisee();
+    System.out.println("4-----------------");
+    student1.storeID(54652365);
+    String[] courses = {"SOC101","CSE111","ENG102"};
+    student1.addCourse(courses);
+    student1.showAdvisee();
+    System.out.println("5-----------------");
+    student1.addCourse("CSE230");
+    student1.showAdvisee();
+    System.out.println("6-----------------");
+    Student student2 = new Student(975738383,3.7);
+    System.out.println("7-----------------");
+    String[] courses2 = {"CSE220","PHY112","MAT120","BUS101","CHN101"};
+    student2.addCourse(courses2);
+    student2.showAdvisee();
+  }
+}
+
+/////////Q.6//////////
+////////CLASS/////////
+/////////CODE/////////
+/////////Q.7//////////
+////////CLASS/////////
+/////////CODE/////////
+/////////Q.8//////////
+////////CLASS/////////
+/////////CODE/////////
