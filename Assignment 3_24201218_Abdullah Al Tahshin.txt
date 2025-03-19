@@ -48,26 +48,26 @@ public class Shape {
     }
     public void setParameters(String n, int p1, int p2) {
         this.n= n;
-        this.p1 = p1;
+         this.p1 = p1;
         this.p2 = p2;
-        area3= 0.5*p1*p2;
+         area3= 0.5* p1*p2;
     }
-       public void setParameters(String n,double p1, double p2) {
+    public void setParameters(String n,double p1, double p2) {
         this.n= n;
-        this.p1 = p1;
+         this.p1 = p1;
         this.p2 = p2;
-        area2=p1*p2;
-    }
+         area2=p1*p2;
+    } 
     public String details() {
         if (n == "Circle") {
-            return "Shape: " + n+ "\nArea " +area;
+              return "Shape: " + n+ "\nArea " +area;
         } 
         else if (n== "Triangle"){
-            return "Shape: " + n+ "\nArea " + area3;
+              return "Shape: " + n+ "\nArea " + area3;
         }
         else{
-          return "Shape: " + n+ "\nArea " +area2;
-        }
+            return "Shape: " + n+ "\nArea " +area2;
+        }  
     }
 }
 ////////CODE/////////
@@ -132,22 +132,22 @@ public class ShelfTester{
 ////////Q.4///////////
 ////////CLASS/////////
 public class Student{
-   public int credit;
+  public int credit;
    public double cgpa;
-   public String department;
-   public String name;
-    public void showDetails() {
+     public String department;
+    public String name;
+     public void showDetails() {
        System.out.println("Name: "+name);
-       System.out.println("Department:"+department);
-       System.out.println("CGPA:" +cgpa);
+        System.out.println("Department:"+department);
+        System.out.println("CGPA:" +cgpa);
        System.out.println("Credits: "+credit);
-        if(cgpa>=3.7){
+      if(cgpa>=3.7){
           System.out.println("Scholarship Status: Merit based scholarship");
         } 
-        else if (cgpa>=3.5 && cgpa<3.7){
+      else if (cgpa>=3.5 && cgpa<3.7){
             System.out.println("Scholarship Status: Need based scholarship");
         }
-        else {
+      else {
           System.out.println("Scholarship Status: No scholarship");
     }
  }
@@ -245,10 +245,10 @@ public class Tester5{
 ////////Q.6///////////
 ////////CLASS/////////
 public class TaxiLagbe {
-    private String taxnum;
-    private String area;
+    public String taxnum;
+    public String area;
     int pass=0;
-    private String[] nam;
+    public String[] nam;
     int mon=0;
     int cap=4;
 
@@ -295,8 +295,8 @@ public class TaxiLagbe {
   public void printDetails() {
     System.out.println("Taxi number: "+taxnum);
       System.out.println("This taxi can cover "+area+ "area");
-     System.out.println("Total Passenger: "+pass);
-     System.out.println("Passenger Lists:");
+       System.out.println("Total Passenger: "+pass);
+         System.out.println("Passenger Lists:");
         for (int i = 0; i <pass; i++){
           System.out.println(nam[i] + " ");
         }
@@ -335,20 +335,20 @@ public class TaxiTester{
 ////////Q.7///////////
 ////////CLASS/////////
 public class Cart {
-    public int cart;
+   public int cart;
     String[] carIt = new String[3];
-    double[] carPr = new double[3];
+     double[] carPr = new double[3];
     int cou = 0;
-    double discount = 0.0;
+   double discount = 0.0;
   public void create_cart(int cart) {
         this.cart = cart;
     }
   public void addItem(String i, double p) {
      if (cou<3) {
        carIt[cou] = i;
-       carPr[cou] = p;
+        carPr[cou] = p;
        cou++;
-       System.out.println(i+" added to cart "+cart+ ".");
+        System.out.println(i+" added to cart "+cart+ ".");
        System.out.println("You have "+cou+" item(s) in your cart now.");
         } 
       else{
@@ -358,9 +358,9 @@ public class Cart {
    public void addItem(double p, String i) {
      if (cou<3) {
        carIt[cou] = i;
-       carPr[cou] = p;
-       cou++;
-       System.out.println(i+" added to cart "+cart+ ".");
+        carPr[cou] = p;
+         cou++;
+        System.out.println(i+" added to cart "+cart+ ".");
        System.out.println("You have "+cou+" item(s) in your cart now.");
         } 
       else{
@@ -432,16 +432,16 @@ public class Reader {
 
    public String createReader(String name, int capa) {
         this.name = name;
-        this.capa = capa;
+      this.capa = capa;
         this.bName = new String[capa];
-        this.cou= 0;
+       this.cou= 0;
         return "A new reader is created!";
     }
 
   public void readerInfo() {
         System.out.println("Name: " + name);
-        System.out.println("Capacity: " + capa);
-        System.out.println("Books:");
+         System.out.println("Capacity: " + capa);
+         System.out.println("Books:");
         if (cou== 0){
             System.out.println("No books added yet");
         } 
@@ -454,8 +454,8 @@ public class Reader {
     }
   public void addBook(String bookName) {
         if (cou<capa) {
-            bName[cou] = bookName;
-            cou++;
+           bName[cou] = bookName;
+             cou++;
         } 
         else {
             System.out.println("No more capacity");

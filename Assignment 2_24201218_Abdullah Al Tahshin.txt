@@ -96,7 +96,13 @@ public class ImaginaryNumber{
 //////Q.5////////
 //////CLASS//////
    public class Course{
+     public String m;
+      public String nt;
+       public int se;
       public void updateDetails(String c1,String c4,int n){
+m=c1;
+nt=c4;
+se=n;
        System.out.println("Course Name:"+c1+"Course Code:"+c4+"Course Credit:"+n);
   }
     public void displayCourse(){
@@ -204,51 +210,32 @@ public class CellPhone{
  }
 ////////Q.8////////
 ///**/*CLASS/*/*//
-public class Employee {
- public String name;
-    public double salary;
- public String designation;
-   public void Employee() {
-  this.salary = 30000.0;
- this.designation = "junior";
-    }
-  public void newEmployee(String name) {
-        this.name = name;
-    }
-    public void displayInfo() {
- System.out.println("Employee Name: " +this.name);
-   System.out.println("Employee Salary: " +this.salary + " Tk");
-     System.out.println("Employee Designation: " +this.designation);
-    }
-    public void promoteEmployee(String newDesignation) {
-        this.designation = newDesignation;
-    if (newDesignation.equals("senior")) {
-            this.salary+=25000.00;
-        } 
-   else if (newDesignation.equals("lead")) {
-  this.salary+=50000.00;
-}
- else if (newDesignation.equals("manager")) {
-     this.salary+=75000.00;
-        } 
-   else {
-            System.out.println("Invalid designation");
+public class CellPhone {
+    // Fields
+    String model = "unknown";
+    private final String[] contacts = new String[3]; // Limited to 3 contacts
+    private int contactCount = 0;
+
+    // Method to print details
+    public void printDetails() {
+        System.out.println("Phone Model " + model);
+        System.out.println("Contacts Stored " + contactCount);
+        if (contactCount > 0) {
+            System.out.println("Stored Contacts:");
+            for (int i = 0; i < contactCount; i++) {
+                System.out.println(contacts[i]);
+            }
         }
-  System.out.println(this.name + " has been promoted to " + newDesignation);
- System.out.println("New Salary: " + this.salary + " Tk");
     }
- public void calculateTax() {
- double tax = 0;
-  if (this.salary>50000) {
-            tax = this.salary * 0.3;
-        } 
-  else if (this.salary>30000) {
-            tax=this.salary*0.1;
-        } 
-  else {
-  System.out.println("No need to pay tax");
-            return;
+
+    // Method to store contact
+    public void storeContact(String contact) {
+        if (contactCount < contacts.length) {
+            contacts[contactCount] = contact;
+            contactCount++;
+            System.out.println("Contact Stored");
+        } else {
+            System.out.println("Memory full. New contact can't be stored.");
         }
-  System.out.println(this.name+"Tax Amount: " +tax+" Tk");
     }
 }
