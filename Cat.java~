@@ -1,0 +1,11 @@
+public class Cat{
+  public String color;
+  public String action;
+  
+    public void increaseDoor(String dr){
+      this.dr=dr;
+    }
+  public void details(){
+    System.out.println(color+" cat is "+action);
+  }
+ }
