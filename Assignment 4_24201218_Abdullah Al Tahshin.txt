@@ -157,7 +157,115 @@ public class Shape2DTester {
 }
 /////////Q.4//////////
 ////////CLASS/////////
+public class Student{
+  public int iD=0;
+  public double cG=0.0;
+  public int cgCou=0;
+  public String[] coU= new String[4];
+   
+  public Student(int c10){
+    iD=c10;
+    System.out.println("A student with ID"+c10+" has been created.");
+  }
+  
+  public Student(int c7, double l2){
+    iD=c7;
+    cG=l2;
+    System.out.println("A student with ID"+c7+"and cgpa"+l2+" has been created.");
+  }
+  
+  public void addCourse(String s1){
+    if(cG>=3.0){
+    coU[cgCou]+=s1;
+    cgCou++;
+    }
+    if(cG<3.0){
+      if(cgCou<=3){
+     coU[cgCou]+=s1;
+     cgCou++;
+      }
+      else{
+          System.out.println("Failed to add "+s1);
+          System.out.println("CG is low. Can't add more than 3 courses.");
+      }
+    }
+   if (cG ==0.0){
+     System.out.println("Failed to add "+s1);
+     System.out.println("Set CG first");
+    }
+  }
+   public void storeID(int r2){
+     iD=r2;
+   }
+  public void addCourse(String[] s2){
+    if(s2.length>=4){
+      System.out.println("Failed to add "+s2[4]);
+      System.out.println("Maximum 4 courses allowed.");
+     coU[cgCou]+=s2;
+     cgCou++;
+    }
+     else{
+       coU[cgCou]+=s2;
+       cgCou++;
+     }
+  }
+  public void storeCG(double s1){
+      cG=s1;
+  }
+    public void removeAllCourse(){
+  int iD=0;
+  double cG=0.0;
+  int cgCou=0;
+  for (int i = 0;i<cgCou; i++) {
+      coU[i] = null;
+        }
+  System.out.println("No course Added");
+  }
+  
+  public void showAdvisee(){
+        System.out.println("Student ID: " + iD + ", CGPA: " + cG);
+        System.out.print("Added courses are: ");
+        if (cgCou == 0) {
+            System.out.println("No courses added.");
+        } 
+        else {
+            for (int i = 0; i<cgCou; i++) {
+                System.out.print(coU[i] + " ");
+            }
+        }
+    }
+ }
 /////////CODE/////////
+public class StudentDriver {
+  public static void main(String[] args){
+    Student student1 = new Student(12345678);
+    System.out.println("1-----------------");
+    student1.addCourse("CSE110");
+    System.out.println("2-----------------");
+    student1.storeCG(2.5);
+    student1.addCourse("CSE110");
+    student1.addCourse("ENG101");
+    student1.showAdvisee();
+    System.out.println("3-----------------");
+    student1.removeAllCourse();
+    student1.showAdvisee();
+    System.out.println("4-----------------");
+    student1.storeID(54652365);
+    String[] courses = {"SOC101","CSE111","ENG102"};
+    student1.addCourse(courses);
+    student1.showAdvisee();
+    System.out.println("5-----------------");
+    student1.addCourse("CSE230");
+    student1.showAdvisee();
+    System.out.println("6-----------------");
+    Student student2 = new Student(975738383,3.7);
+    System.out.println("7-----------------");
+    String[] courses2 = {"CSE220","PHY112","MAT120","BUS101","CHN101"};
+    student2.addCourse(courses2);
+    student2.showAdvisee();
+  }
+}
+
 /////////Q.5//////////
 ////////CLASS/////////
 public class Triangle{
@@ -176,7 +284,7 @@ public class Triangle{
       if (a==b && b==c && a==c){
         return "This is an Equilateral Triangle.";
       }
-      else if( a==b || b==c || a==c){
+      else if(a==b||b==c|| a==c){
         return "This is an Isosceles Triangle.";
     }
       else{
@@ -191,17 +299,17 @@ public class Triangle{
     }
     
     public void compareTrinagles(Triangle obj) {
-        if (this==obj) {
-          System.out.println("These two triangle objects have the same address.");
+      if (this==obj) {
+       System.out.println("These two triangle objects have the same address.");
         } 
-        else if (this.a==obj.a && this.b==obj.b && this.c==obj.c) {
-          System.out.println("Addresses are different but the sides of the triangles are equal.");
+      else if(this.a==obj.a && this.b==obj.b && this.c==obj.c) {
+       System.out.println("Addresses are different but the sides of the triangles are equal.");
         } 
-        else if ((this.a+this.b+this.c) == (obj.a+obj.b+obj.c)) {
-            System.out.println("Only the perimeter of both triangles is equal.");
+      else if((this.a+this.b+this.c)==(obj.a+obj.b+obj.c)){
+       System.out.println("Only the perimeter of both triangles is equal.");
         } 
-        else {
-            System.out.println("Addresses, length of the sides and perimeter all are different.");
+      else{
+       System.out.println("Addresses, length of the sides and perimeter all are different.");
         }
     }
 }
@@ -237,11 +345,288 @@ public class StudentDriver {
 }
 
 /////////Q.6//////////
-////////CLASS/////////
+////////CLASS 1/////////
+public class Course{
+  public String course;
+  
+  public Course(String c4){
+   course=c4; 
+  }
+}
+////////CLASS 2/////////
+public class Teacher {
+  public String nAm;
+  public String inI;
+  public String[] courses=new String[3];
+  public int couCou = 0;
+  
+  public Teacher(String c1, String c2) {
+     nAm =c1;
+     inI =c2;
+        System.out.println("A new teacher has been created");
+    } 
+   
+  public void addCourse(Course a1) {
+        if (couCou<courses.length) {
+            courses[couCou] = a1.course;
+            couCou++;
+        } 
+        else {
+            System.out.println("3 courses only");
+        }
+    }
+
+   public void printDetail() {
+       System.out.println("Name: " +nAm);
+       System.out.println("Initial: " +inI);
+       System.out.println("List of courses:");
+           for (int i=0;i<couCou;i++) {
+                System.out.println(courses[i]);
+            }
+      } 
+}
 /////////CODE/////////
+public class TestTeacher{
+  public static void main(String [] args){
+    Teacher t1 = new Teacher("Matin Saad Abdullah","MSA");
+    Teacher t2 = new Teacher("Mumit Khan","MMK");
+    Teacher t3 = new Teacher("Sadia Hamid Kazi","SKZ");                         
+    Course c1 = new Course("CSE 110");
+    Course c2 = new Course("CSE 111");
+    Course c3 = new Course("CSE 220"); 
+    Course c4 = new Course("CSE 221");
+    Course c5 = new Course("CSE 230"); 
+    Course c6 = new Course("CSE 310");
+    Course c7 = new Course("CSE 320"); 
+    Course c8 = new Course("CSE 340");
+    t1.addCourse(c1);
+    t1.addCourse(c2);
+    t2.addCourse(c3);
+    t2.addCourse(c4);
+    t2.addCourse(c5);
+    t3.addCourse(c6);
+    t3.addCourse(c7); 
+    t3.addCourse(c8);
+    System.out.println("1========================");
+    t1.printDetail();
+    System.out.println("2========================");
+    t2.printDetail();
+    System.out.println("3========================");
+    t3.printDetail();
+  }
+}
 /////////Q.7//////////
-////////CLASS/////////
+////////CLASS 1///////
+public class BracuBus{
+  public int cou=2;
+  public String home;
+  public int pasSco=0;
+   public String names=" ";
+  public BracuBus(String place){
+    home=place;
+  }
+  public BracuBus(String place1,int co){
+    home=place1;
+    cou=co;
+  }
+  public void showDetails(){
+    System.out.println("Bus Route: "+home);
+    System.out.println("Passenger Count: "+pasSco+ "(MAX: "+cou+")");
+    System.out.println("Passengers on Board:"+names);
+  }
+  public void board(){
+    System.out.println("No passengers");
+  }
+    public void board (BracuStudent n2){
+    System.out.println(n2.nam+" boarded the bus");
+      pasSco++;
+}
+  public void board(BracuStudent b4,BracuStudent c4){
+   names+=b4.nam;
+    if ((this.home != b4.hom || this.home != c4.hom) && (b4.c2 == false || c4.c2 == false)){
+      System.out.println("You don't have a bus pass!");
+      System.out.println("You got on the wrong bus!");
+    }
+   if (this.home == b4.hom || this.home == c4.hom){
+      System.out.println(b4.nam+ " boarded the bus");
+       pasSco+=2;
+    }
+    if(pasSco>cou){
+       System.out.println("Bus is full!");
+    }
+  }
+}
+////////CLASS 2///////
+public class BracuStudent{
+  public String nam;
+  public String hom;
+  public boolean c2=false;
+  
+  public BracuStudent(String c1, String c2){
+    nam=c1;
+    hom=c2;
+  }
+  public void showDetails(){
+    System.out.println("Student Name: "+nam);
+    System.out.println("Lives in "+hom);
+    System.out.println("Have Bus Pass? "+c2);
+  }
+    public void getPass(){
+      c2=true;
+    }
+    public void updateHome(String hg){
+     hom=hg;
+    }
+}
 /////////CODE/////////
+public class BracuStudentTester {
+ public static void main(String[] args) {
+  BracuStudent st1 = new BracuStudent("Afif", "Mirpur");
+  System.out.println("1===============");
+  BracuStudent st2 = new BracuStudent("Shanto", "Motijheel");
+  BracuStudent st3 = new BracuStudent("Taskin", "Mirpur");
+  st1.showDetails();
+  st2.showDetails();
+  System.out.println("2===============");
+  st3.showDetails();
+  System.out.println("3===============");
+  BracuBus bus1 = new BracuBus("Mirpur");
+  BracuBus bus2 = new BracuBus("Azimpur", 5);
+  bus1.showDetails();
+  bus2.showDetails();
+  System.out.println("4===============");
+  st2.getPass();
+  st3.getPass();
+  System.out.println("5===============");
+  st2.showDetails();
+  st3.showDetails();
+  System.out.println("6===============");
+  bus1.board();
+  System.out.println("7===============");
+  bus1.board(st1, st2);
+  System.out.println("8===============");
+  st1.getPass();
+  st2.updateHome("Mirpur");
+  st1.showDetails();
+  st2.showDetails();
+  System.out.println("9===============");
+  bus1.board(st1);
+  bus1.board(st2, st3);
+  System.out.println("10===============");
+  bus1.showDetails();
+ }
+}
 /////////Q.8//////////
-////////CLASS/////////
+////////CLASS 1///////
+public class Student {
+    public String emAil = null;
+    public String pasS = null;
+    public String logstat = null;
+    public String nam = " ";
+    public String course = " ";
+    public int iD = 0; 
+
+    public Student(String n1, int id, String cou) {
+        nam = n1;
+        iD = id;
+        course = cou;
+        System.out.println("Student object is created");
+    }
+    
+    public void email(String email) {
+       emAil = email;
+    }
+
+    public void password(String password) {
+        pasS = password;
+    }
+}
+////////CLASS 2///////
+public class Usis{
+  public int totalAdvisee=0;
+  public String[] subs= new String[4];
+  public String name=" ";
+  public String dep=" ";
+  public int iDd=0;
+   
+  public Usis(){
+    System.out.println("Usis is ready to use!");
+  }
+  
+  public void login(Student n1){
+    if(n1.emAil == null && n1.iD==0){
+     System.out.println("Email and password need to be set.");
+  }
+    else{
+     System.out.println("Login successful"); 
+    }
+  }
+  
+  public void advising(Student n2){
+    if(n2.emAil == null && n2.iD ==0){
+      System.out.println("Please login to advise courses!");
+    }
+    else{
+     System.out.println("You haven't selected any courses.");   
+   }
+  }
+  
+    public void advising(Student n3,String s0,String s1,String s2,String s3){
+      name=n3.nam;
+      dep=n3.course;
+      iDd=n3.iD;
+      System.out.println("You need special approval to take more than 3 courses.");
+    }
+    
+     public void advising(Student n4,String r0,String r1,String r2){
+         subs[0]= r0;
+         subs[1]= r1;
+         subs[2]= r2;
+         totalAdvisee++;
+       System.out.println("Advising successful!");
+     }
+     
+     public void allAdviseeInfo(){
+       System.out.println("Total Advisee: "+totalAdvisee);
+       System.out.println("Name: "+name+"   ID"+iDd);
+       System.out.println("Department: "+dep);
+       System.out.println("Advised Courses:");
+        for(int i=0; i<subs.length;i++){
+         System.out.println(subs[i]); 
+       }
+   }
+}
 /////////CODE/////////
+public class UsisTester {
+  public static void main(String[] args) {
+    Student rakib = new Student("Rakib", 12301455, "CSE");
+    Student roy = new Student("Roy", 12501345, "CS");
+    System.out.println("1*************");
+    Usis usisObj = new Usis();
+    System.out.println("2*************");
+    usisObj.login(rakib);
+    System.out.println("3*************");
+    usisObj.advising(rakib);
+    System.out.println("4*************");
+    rakib.email = "rakib@hotmail.com";
+    rakib.password = "1234";
+    System.out.println("5*************");
+    usisObj.login(rakib);
+    System.out.println("6*************");
+    usisObj.advising(rakib);
+    System.out.println("7*************");
+    usisObj.advising(rakib, "CSE110", "PHY111", "MAT110", "CSE260");
+    System.out.println("8*************");
+    usisObj.advising(rakib, "CSE110", "PHY111","MAT110");
+    System.out.println("9*************");
+    usisObj.allAdviseeInfo();
+    System.out.println("10*************");
+    roy.email = "roy@hotmail.com";
+    roy.password = "abcd";
+    usisObj.login(roy);
+    System.out.println("11*************");
+    usisObj.advising(roy, "CSE110", "ENG101", "PHY112");
+    System.out.println("12*************");
+    usisObj.allAdviseeInfo();
+  }
+}
