@@ -29,13 +29,16 @@ public class Triangle{
     }
     
     public void compareTrinagles(Triangle obj) {
-        if (this == obj) {
-            System.out.println("These two triangle objects have the same address.");
-        } else if (this.a ==obj.a && this.b ==obj.b && this.c ==obj.c) {
-            System.out.println("Addresses are different but the sides of the triangles are equal.");
-        } else if ((this.a + this.b + this.c) == (obj.a + obj.b +obj.c)) {
+       if (this == obj) {
+          System.out.println("These two triangle objects have the same address.");
+        } 
+        else if (this.a==obj.a && this.b==obj.b && this.c==obj.c) {
+          System.out.println("Addresses are different but the sides of the triangles are equal.");
+        } 
+        else if ((this.a+this.b+this.c) == (obj.a+obj.b+obj.c)) {
             System.out.println("Only the perimeter of both triangles is equal.");
-        } else {
+        } 
+        else {
             System.out.println("Addresses, length of the sides and perimeter all are different.");
         }
     }

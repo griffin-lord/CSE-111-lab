@@ -1,0 +1,8 @@
+public class treay{
+  public static void main(String[]args){
+    Cat c1= new Cat();
+    c1.color="Red";
+    c1.action="Sitting";
+    System.out.println(s1.sabe);
+  }
+}
