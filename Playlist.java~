@@ -1,0 +1,11 @@
+public class Playlist{
+  public String plau;
+  
+  public Playlist(String cn){
+    plau=cn;
+    System.out.println(plau+" created. ");
+  }
+  public void info(){
+    System.out.println(plau+" has the following songs:");
+  }
+}

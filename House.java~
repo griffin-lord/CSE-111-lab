@@ -1,0 +1,11 @@
+public class House{
+  public int window;
+  public int door;
+  public void view(){
+    System.out.println(windows+"windows");
+    System.out.println(door+"door");
+    public void increaseDoor(int dr){
+      door =door+dr;
+    }
+  }
+}

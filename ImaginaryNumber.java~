@@ -1,0 +1,6 @@
+public class ImaginaryNumber{
+  public class printNumber{
+   public int realPart;
+    public int imaginaryPart;
+  }
+}
