@@ -1,0 +1,332 @@
+//Q.1//
+import java.util.Scanner;
+public class OddPositiveStats{
+ public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+         int su= 0;
+          int cou= 0;
+           int min=Integer.MAX_VALUE;
+            int max=Integer.MIN_VALUE;
+         System.out.println("Enter 10 numbers:");
+      for (int i =0; i<10;i++){
+            int num =sc.nextInt();
+            if (num%2!=0 && num>0){
+                su+=num;
+                cou++;
+                if(num<min){
+                    min=num;
+                }
+                if (num>max){
+                    max = num;
+                }
+            }
+        }
+        if (cou==0) {
+            System.out.println("No odd positive numbers found");
+        } 
+        else{
+             double aver=(double)sum/cou;
+            System.out.println("Sum of positive odd numbers: " + su);
+                System.out.println("Average of positive odd numbers: " + aver);
+             System.out.println("Minimum of positive odd numbers: " + min);
+               System.out.println("Maximum of positive odd numbers: " + max);
+        }
+    }
+}
+//Q.2//
+import java.util.Scanner;
+public class primornoto{
+    public static void main(String[] args) {
+        Scanner sca= new Scanner(System.in);
+         System.out.println("Enter the first integer number: ");
+          int sta = sca.nextInt();
+        System.out.println("Enter the second integer number: ");
+         int end= sca.nextInt();
+        if (sta>end) {
+             int temp= sta;
+            sta=end;
+            end =temp;
+        }
+         boolean[] isPrime = new boolean[end + 1];
+        for (int i = 0; i <= end; i++) {
+            isPrime[i] = true;
+        }
+        isPrime[0] = false;
+         isPrime[1] = false;
+        for (int i = 2; i * i <= end; i++) {
+            if (isPrime[i]) {
+                for (int j = i * i; j <= end; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+        int cou= 0;
+        for (int k= sta; k<= end; k++) {
+            if (isPrime[k]) {
+                cou++;
+            }
+        }
+        System.out.println("There are "+cou+" prime numbers between "+sta+" and " +end+".");
+    }
+}
+///Q.3///
+import java.util.Scanner;
+public class sssiiium {
+   public static void main(String[] args) {
+        Scanner sca = new Scanner(System.in);
+         System.out.println("Enter the first word: ");
+           String wordq = sca.next();
+        System.out.println("Enter the second word: ");
+             String wordp = sca.next();
+        String newst= wordq+ " " +wordp;
+                int summ= 0;
+        for (int i = 0; i <newst.length(); i++) {
+              summ += newst.charAt(i);
+        }
+        System.out.println(+newst);
+          System.out.println(+summ);
+    }
+}
+//Q.4//
+import java.util.Scanner;
+public class Prev {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+         System.out.println("Enter a string in small letters: ");
+          String wor = sc.nextLine();
+         String result = new String();
+         for (int i = 0; i < wor.length(); i++) {
+            char cha =wor.charAt(i);
+             if (cha>= 'a' && cha<= 'z') {
+                 char prechar = (cha == 'a') ? 'z' :(char) (cha - 1);
+                result+=prechar;
+            }
+              else {
+                result+=cha;
+            }
+        }
+        System.out.println(+ result.toString());
+    }
+}
+//Q/5//
+import java.util.Scanner;
+public class rever {
+    public static void main(String[] args) {
+          Scanner sc= new Scanner(System.in);
+        System.out.println("Enter the length of the array: ");
+               int leng= sc.nextInt();
+          int[] array1 = new int[leng];
+         System.out.println("Enter " + leng + " integers:");
+         for (int i=0; i<leng; i++) {
+            array1[i] = sc.nextInt();
+        }
+        for (int i = 0;i <leng/ 2;i++) {
+               int temp=array1[i];
+            array1[i] = array1[leng -1-i];
+              array1[leng-1-i]= temp;
+        }
+        System.out.println("Reversed array:");
+         for (int i=0; i< leng;i++) {
+            System.out.println(array1[i] + " ");
+        }
+    }
+}
+//Q.6//
+import java.util.Scanner;
+public class Frcout{
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+         System.out.println("Enter the number of elements (m): ");
+          int m= sc.nextInt();
+            int[] arr= new int[m];
+         System.out.println("Enter " + m+ " integers:");
+        for (int i = 0; i <m; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("Frequency of each number:");
+           boolean[] visit= new boolean[m];
+        for (int i = 0; i < m; i++) {
+            if (visit[i]) 
+             continue;
+            int cou= 1;
+            for (int j = i + 1; j < m; j++) {
+                if (arr[i] == arr[j]) {
+                    visit[j] = true;
+                    cou++;
+                }
+            }
+            System.out.println(arr[i] + " appears " +cou+ " times");
+        }
+    }
+}
+//Q.7//
+import java.util.Scanner;
+public class ReDup {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+          System.out.println("Enter the length of the array (N): ");
+          int N = sc.nextInt();
+            double[] orgArray = new double[N];
+          System.out.println("Enter "+ N +" double values:");
+        for (int i = 0;i<N; i++) {
+            orgArray[i] = sc.nextDouble();
+        }
+        int cou = 0;
+          double[] newArr = new double[N];
+          int in = 0;
+        if (N>0) {
+            newArr[in++] = orgArray[0];
+               for (int i=1;i<N;i++) {
+                if (orgArray[i] != orgArray[i-1]) {
+                    newArr[in++] = orgArray[i];
+                } 
+                else {
+                    cou++;
+                }
+            }
+        }
+        double[] Array3 = new double[in];
+        for (int i = 0; i < in; i++) {
+            Array3[i] =newArr[i];
+        }
+          System.out.println("Removed elements :" + cou);
+            System.out.print("New Array: ");
+         for (int i = 0; i <Array3.length; i++) {
+            System.out.print(Array3[i] + " ");
+        }
+    }
+}
+//Q.8//
+import java.util.Scanner;
+public class Flat {
+    public static void main(String[] args) {
+         Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number of rows: ");
+             int rs = sc.nextInt();
+                 System.out.print("Enter the number of columns: ");
+             int cs = sc.nextInt();
+        int[][] array2D = new int[rs][cs];
+         System.out.println("Enter the elements of the 2D array:");
+           for (int i = 0; i < rs; i++) {
+            for (int j = 0; j < cs; j++) {
+                array2D[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("2D Array:");
+          for (int i = 0; i < rs; i++) {
+             for (int j = 0; j < cs; j++) {
+                System.out.print(array2D[i][j] + " ");
+            }
+            System.out.println();
+        }
+        int[] array1D = new int[rs * cs];
+             int in = 0;
+         for (int i = 0; i < rs; i++) {
+            for (int j = 0; j < cs; j++) {
+                array1D[in++] = array2D[i][j];
+            }
+        }
+        System.out.println(" 1D Array:");
+          for (int i = 0; i < array1D.length; i++) {
+            System.out.print(array1D[i] + " ");
+        }
+    }
+}
+//Q.9//
+import java.util.Scanner;
+public class y {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+         System.out.print("Enter the number of rows: ");
+          int rs = sc.nextInt();
+          int sum1=0;
+        int sum2=0;
+          int[][] array2D = new int[rs][rs];
+             System.out.println("Enter the elements of the 2D array:");
+        for (int i = 0; i<rs; i++) {
+             for (int j = 0; j<rs; j++) {
+                array2D[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("2D Array:"); 
+          for (int i = 0; i < rs; i++) {
+             for (int j = 0; j<rs; j++) {
+                System.out.print(array2D[i][j] + " ");
+            }
+           System.out.println();
+        }
+     for(int i=0; i<array2D.length; i++) {
+      for (int j=0; j<array2D.length; j++){
+        if(i==j){
+          sum1+=array2D[i][j];
+        }
+        else{
+          sum2+=array2D[i][j];
+        }
+      }
+     }
+        if(sum1 == rs){
+          System.out.println("Identity Matrix");
+        }
+          else{
+            System.out.println("Not an Identity Matrix");
+}
+    }
+   }
+//q.10//
+import java.util.Scanner;
+public class game {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int[][] grid = {{0, 0, -1, 0}, {7, 0, 0, -1},{0, 10, 0, 0},{0, 0, 0, 0}};
+         int playRow = 1;
+          int playCol = 0;
+           int moves = 5;
+         while (moves> 0) {
+             System.out.println("Current Grid:");
+              for (int i = 0; i < grid.length; i++) {
+                  for (int j = 0; j < grid[i].length; j++) {
+                    System.out.print(grid[i][j] + " ");
+                }
+                 System.out.println();
+            }
+            System.out.println("Moves left: " + moves);
+             System.out.print("Enter your move (UP/DOWN/LEFT/RIGHT): ");
+               String move=sc.nextLine().toUpperCase();
+            if (move.equals("UP")) {
+                  playRow--;
+            } 
+             else if (move.equals("DOWN")) {
+                  playRow++;
+            } 
+              else if (move.equals("LEFT")) {
+                    playCol--;
+             } 
+                   else if (move.equals("RIGHT")) {
+                     playCol++;
+            } 
+              else {
+                 System.out.println("Invalid move. Try again.");
+                           continue;
+            }
+             if (playRow < 0 || playRow >= grid.length || playCol<0 || playCol>= grid[0].length) {
+                System.out.println("You moved outside the grid. Game over!");
+                            break;
+            }
+               if (grid[playRow][playCol] == -1) {
+                System.out.println("You stepped on a mine. Game over!");
+                             break;
+            }
+              if (grid[playRow][playCol] == 10) {
+                System.out.println("Congratulations! You found the treasure!");
+                          break;
+            }
+            grid[1][0] = 0;
+             grid[playRow][playCol] = 7;
+                 moves--;
+            if (moves == 0) {
+                System.out.println("Out of moves. Game over!");
+            }
+        }
+    }
+}
