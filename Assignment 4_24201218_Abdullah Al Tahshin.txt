@@ -519,8 +519,8 @@ public class BracuStudentTester {
 /////////Q.8//////////
 ////////CLASS 1///////
 public class Student {
-    public String emAil = null;
-    public String pasS = null;
+    public String email = null;
+    public String password= null;
     public String logstat = null;
     public String nam = " ";
     public String course = " ";

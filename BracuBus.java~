@@ -1,0 +1,39 @@
+public class BracuBus{
+  public int cou=2;
+  public String home;
+  public pasSco=0;
+  
+  public BracuBus(String place){
+    home=place;
+  }
+  public BracuBus(String place1,int co){
+    home=place1;
+    cou=co;
+  }
+  public void showDetails(){
+    System.out.println("Bus Route: "+home);
+    System.out.println("Passenger Count: "+pasSco+ "(MAX: "+cou+")");
+    
+  }
+  public void board(){
+    System.out.println("No passengers");
+  }
+    public void board (BracuStudent n2){
+    System.out.println(n2.nam" boarded the bus")
+      pasScou++;
+}
+  public void board(BracuStudent b4,BracuStudent c4){
+    if ((this.home =! b4.hom || this.home =! c4.hom) && (b4.c2 == false || c4 == false)){
+      System.out.println("You don't have a bus pass!");
+      System.out.println("You got on the wrong bus!");
+    }
+    if ((this.home == b4.hom || this.home == c4.hom) && cou>pasScou){
+      System.out.println(b4.nam+ " boarded the bus");
+       System.out.println(c4.nam+ " boarded the bus");
+       pasScou++;
+    }
+    if(pasScou>cou){
+       System.out.println("Bus is full!");
+    }
+  }
+}

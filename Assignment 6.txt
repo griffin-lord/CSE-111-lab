@@ -1,0 +1,68 @@
+public class Product{
+  private String name;
+  private double mon;
+  private int quant;
+  
+  public Product(){
+   name="Unknown";
+   mon=0.0;
+  }
+  
+  public Product(String nl,double a1){
+   name=nl;
+   mon=a1;
+  }
+  
+  public void displayInfo(){
+   System.out.println("Product Name: "+name);
+   System.out.println("Price: $"+mon);
+  }
+  
+  public void setQuantity(int ew){
+    quant=ew;
+  }
+  
+  public void displayInfo(boolean sa){
+    if(sa==true){
+      System.out.println("Product Name: "+name);
+      System.out.println("Price: $"+mon);
+      System.out.println("Quantity: "+quant);
+    }
+  }
+    public double getPrice(){
+     return mon; 
+    }
+    public int getQuantity(){
+     return quant; 
+    }
+  }
+public class Passenger{
+  public String name;
+  public double km;
+  public double mon;
+  public static int no_of_passenger;
+  public static double total_fare;
+  
+  public Passenger(){
+    no_of_passenger=0;
+    total_fare=0.0;
+  }
+  
+  public Passenger(String g1, double ra1){
+    name=g1;
+    km=ra1;
+    no_of_passenger+=1;
+    mon=ra1*20;
+    total_fare+=mon;
+  }
+  
+  public void passengerDetails(){
+    System.out.println("Name: "+name);
+    System.out.println("Fare: "+mon);
+  }
+  
+  public void storeBaggageWeight(double s4){ 
+    mon+=s4*10;
+    total_fare+=s4*10;
+  }
+}
