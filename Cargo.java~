@@ -1,6 +1,6 @@
 public class Cargo{
   public String nam;
-  public double capa;
+  public static double capa;
   public static double cap;
   public static int id;
   public static int carg=1;
@@ -11,25 +11,32 @@ public class Cargo{
     capa=n2;
     id+=1;
   }
-  public static void capacity(){
+  public static double capacity(){
     cap=10.0;
     capa+=cap;
-    If (capa==0){
-     System.out.println("Cargo Capacity: "+cap);
-    }
-    If (capa <= 10.0){
-     System.out.println(Cannot load cargo, exceeds weight capacity.);  
-    }
-    if(capa>10.0){
-      System.out.println("Cargo Capacity: "+cap);
-    }
+    return capa;
   }
   public void details(){
   System.out.println("Cargo ID: "+id+", Contents: "+nam);
   System.out.println("Weight: "+capa+" Loaded: "+sw);
 }
   public void load(){
-    System.out.println("Cargo "+carg+ "loaded for transport.");
+    if(capa == 0){
+     System.out.println("Cargo "+carg+ "loaded for transport.");
+     System.out.println("Cargo Capacity: "+cap);
+    }
+    if(capa <= 10.0){
+      System.out.println("Cargo "+carg+ "loaded for transport.");
+     System.out.println("Cannot load cargo, exceeds weight capacity.");  
+    }
+    if(capa>10.0){
+      System.out.println("Cargo Capacity: "+cap);
+    }
     carg++;
+  }
+  public void unload(){
+    System.out.println("Cargo "+carg+" unloaded.");
+    carg-=cap;
+    System.out.println("Cargo Capacity: "+capa);
   }
 }
