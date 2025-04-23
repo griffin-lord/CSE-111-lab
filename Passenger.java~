@@ -1,0 +1,24 @@
+public class Passenger{
+  public String name;
+  public int km;
+  public double mon;
+  public static int no_of_passenger;
+  public static double total_fare;   
+  public Passenger(){
+    no_of_passenger=0;
+    total_fare=0.0;
+  }
+  
+  public Passenger(String g1, double ra1){
+    name=g1;
+    km=ra1;
+    no_of_passenger+=1;
+    mon=ra1*20;
+    total_fare+=mon;
+  }
+  
+  public void passengerDetails(){
+    System.out.println("Name: "+name);
+    System.out.println("Fare: "+mon)
+  }
+storeBaggageWeight(6.8)  

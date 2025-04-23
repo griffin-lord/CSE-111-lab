@@ -1,0 +1,33 @@
+public class Product{
+  private String name="Unknown";
+  private double mon=0.0;
+  private int quant;
+  
+  public Product(String nl,double a1){
+   name=nl;
+   mon=a1;
+  }
+  
+  public void displayInfo(){
+   System.out.println("Product Name: "+name);
+   System.out.println("Price: $"+mon);
+  }
+  
+  private void setQuantity(int ew){
+    quant=ew;
+  }
+  
+  private void displayInfo(boolean sa){
+    if(sa==true){
+      System.out.println("Product Name: "+name);
+      System.out.println("Price: $"+mon);
+      System.out.println("Quantity: "+quant);
+    }
+    private void getPrice(){
+     return mon; 
+    }
+    private void getQuantity(){
+     return quant; 
+    }
+  }
+}

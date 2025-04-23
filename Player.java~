@@ -1,0 +1,24 @@
+public class Player{
+  public static String name;
+  public static int jer;
+  public static String count;
+  public static int total;
+  public static String name;
+  
+  public Player(String n2, String c4,int n3){
+   name=n2;
+   count=c4;
+   jer=n3;
+   total++;
+   nam+=n2;
+  }
+  public static void player_detail(){
+    System.out.println("Player Name: "+name);
+    System.out.println("jersey Number: "+jer);
+    System.out.println("Country: "+count);
+  }
+  public static void info(){
+    System.out.println("Total number of players: "+total);
+    System.out.println("Player enlisted so far: "+nam);
+  }
+}
