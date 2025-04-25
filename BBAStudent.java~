@@ -1,0 +1,4 @@
+public static BBAStudent extends Student{
+  public BBAStudent(String c3){
+    super(c3);
+}
