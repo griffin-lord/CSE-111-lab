@@ -1,0 +1,21 @@
+public class Circle{
+  private double red;
+  public static int count;
+  public double area;
+  
+  public Circle(double in){
+    red=in;
+    setRadius();
+    count+=1;
+  }
+  public void setRadius(){
+  }
+   public double getRadius(){
+     return red;
+    }
+   
+   public double area(){
+     area= 3.1416 *red*red;
+     return area;
+   }
+}
