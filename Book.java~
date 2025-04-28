@@ -6,7 +6,7 @@ public class Book{
  public static int total_books_sold;
  public static double total_revenue;
  
-   public Book(String b2,double g4){
+  public Book(String b2,double g4){
    price=150.0;
    book=b2;
    disc=g4;
@@ -21,6 +21,6 @@ public class Book{
    
    public void bookDetails(){
      System.out.println("Title: "+book); 
-     System.out.println("Price after Discount: "+mon);
+     System.out.println("Price after Discount: "+mon+"TK");
    }
  }
