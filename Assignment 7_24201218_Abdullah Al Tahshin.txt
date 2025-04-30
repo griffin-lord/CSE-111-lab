@@ -1,65 +1,235 @@
 ///////Assignment 1/////////
-public class BBAStudent extends Student {
- public BBAStudent(){
-  super();
-  setName("Default");
-  setDepartment("BBA");
+public class BrowserHistory{
+public static int count;
+public static int cou;
+public String[] nam= new String[4];
+
+public BrowserHistory(int n1){
+  cou=n1;
+}
+public void showHistory(){
+  if(count==0){
+    System.out.println("No web pages visited yet.");
   }
- public BBAStudent(String name) {
-  super();
-  setName(name);
-  setDepartment("BBA");
+  else{
+    System.out.println("Browser History:");
+    for(int i=0;i<=cou;i++){
+     System.out.println(nam[i]); 
+   }
+  }
+}
+  
+ public void currentWeb(){
+     if(count==0){
+    System.out.println("You have not visited any website yet!");
+}
+     else{
+      System.out.println(nam[count]); 
+     }
+  }
+  public void visitWeb(String nm){
+    count++; 
+   if(count<=cou){
+     nam[count]=nm;
+     System.out.println("Visited: "+nm);
+    }
+   else{
+     count--; 
+     System.out.println("History is full. Cannot visit ");
+     System.out.println(nm);
+   }
+ }
+  public void back(){
+   count--; 
   }
 }
 ///////Assignment 2/////////
-public class CheckingAccount extends Account{
-  public static int count;
-  public double money;
-  
-  public CheckingAccount(){
-    super(0.0);
-    count++;
-  }
-  public CheckingAccount(double c2){
-   super(c2);
-   count++;
-  }
- }
-///////Assignment 3/////////
-////////Cat Class//////////
-public class Cat extends Animal{
-  public String nam;
-  public int ag;
-  public String clr;
-  public String type;
-  
-  public Cat(String nm,int ag,String c3,String c4){
-    super(nm,ag,c4);
-    clr=c3;
-    nam=nm;
-  }
-  public void makeSound(){
-    System.out.println(clr+" color "+nam+" is meowing");
-  }
+public class CustomerService{
+public static int count;
+public static int cou;
+public String[] nam= new String[4];
+
+public CustomerService(int n1){
+  cou=n1;
 }
-////////Dog Class//////////
-public class Dog extends Animal{
-  public String nam;
-  public int ag;
-  public String clr;
-  public String type;
-  
-  public Dog(String nm,int ag,String c3,String c4){
-    super(nm,ag,c4);
-    clr=c3;
-    nam=nm;
+public void serveCustomer(){
+  if(count==0){
+    System.out.println("No customers to serve");
   }
-  public void makeSound(){
-    System.out.println(clr+" color "+nam+" is barking");
+  else{
+    count--;
+    System.out.println("Serving: "+nam[count]);
+   }
   }
+ 
+  public void addCustomer(String nm){
+    count++; 
+   if(count<=cou){
+     nam[count]=nm;
+     System.out.println("Added: "+nm);
+    }
+   else{
+     count--; 
+     System.out.println("Queue is full. Cannot add "+nm);
+   }
+ }
+}
+///////Assignment 3/////////
+public class Circle extends Shape {
+    public int radius;
+    public double area;
+    
+    public void area(){
+      area=Math.PI*radius*radius;
+      System.out.println("Area: "+area);
+    }  
 }
 ///////Assignment 4/////////
+public class Dog extends Animal{
+  public String name;
+  public Dog(){
+   System.out.println("The dog says hello!"); 
+  }
+  public String getName(){
+    return name;
+  }
+  public void updateSound(String sou){  
+  super.sound=sou;
+ }
+}
 ///////Assignment 5/////////
+///////Tennis_Tournament/////////
+public class Tennis_Tournament extends Tournament {
+    public int nme;
+
+    public Tennis_Tournament(String nam, int es) {
+        super(nam);
+        nme =es;
+    }
+
+    public String detail() {
+        return "Tennis Tournament Name: "+getName()+"\nNumber of Players: " +nme;
+    }
+}
+///////Cricket_Tournament/////////
+public class Cricket_Tournament extends Tournament {
+ public int nme;
+ public String type;
+
+ public Cricket_Tournament() {
+   super();
+   nme = 0;
+   type = "No type";
+ }
+ 
+ public Cricket_Tournament(String nam, int et, String typ) {
+    super(nam);
+    nme=et;
+    type=typ;
+  }
+ public String detail() {
+     return "Cricket Tournament Name: " + getName() + "\nNumber of Teams: " + nme + "\nType: " + type;
+  }
+}
 ///////Assignment 6/////////
+/////////Class CD///////////
+public class CD extends Product{  
+ public int id;
+ public String title;
+ public int price;
+ public String isbn;
+ public int tim;
+ public String gen;
+ 
+ public CD(int in,String tc,int pr,String num,int c4,String n2){
+  super(in,tc,pr);
+  isbn=num;
+  tim=c4;
+  gen=n2;
+ }
+  public String printDetail(){
+      return getIdTitlePrice()+"\nBand: "+isbn+" Duration: "+tim+" minutes Genre: "+gen;
+  
+  }
+}
+////////Class Book//////////
+public class Book extends Product{
+ public String publi;
+
+  public Book(int id,String titl, int pr, String num, String c4){
+    super(id,titl,pr);
+    publi=c4;
+  }
+    
+    public String printDetail(){
+      return getIdTitlePrice()+"\nPublisher: "+publi;
+    }
+  }
 ///////Assignment 7/////////
+public class CSEStudent extends Student{
+  public static String cours="CSE110 CSE111 CSE220 CSE221" ;
+  public static int cou;
+  
+  public CSEStudent(String nam, int iD){
+    super(nam,iD);
+    cou++;
+  }
+  public void addLabBasedCourse(String nam){
+    if(nam == "CSE110" || nam == "CSE111" || nam == "CSE220" || nam == "CSE221"){
+    courses+=nam;
+    }
+    else{
+      System.out.println("It is not a lab based course!");
+    }
+  }
+  public static String details(){
+    return "Total CSE Students: "+cou+ "\nAvailable Lab Based Courses: "+cours;
+  }
+}
 ///////Assignment 8/////////
+///////Player Class/////////
+public class Player extends SportsPerson{
+  public double total_goal;
+  public double total_match;
+  public String posit;
+  public double pay;
+  public double avg;
+  
+  public Player(String team, String name,String pos,int gol, int match){
+    super(team,name,pos);
+    posit=pos;
+    total_goal=gol;
+    total_match=match;
+    pay=(total_goal*1000)+(total_match*10);
+}
+  
+ public void calculateRatio(){
+    avg=(total_goal/total_match);
+}
+ public void printDetails() {
+   System.out.println(getNameTeam());
+   System.out.println("Team Role: " + posit);
+   System.out.println("Total Goal: " +total_goal+", Total Played: " +total_match);
+   System.out.println("Goal Ratio: "+avg);
+   System.out.println("Match Earning: " +pay+ "K");
+  }
+}
+///////Manager Class/////////
+public class Manager extends SportsPerson{
+  public String posit;
+  public int  match_win;
+  public double pay;
+  
+ public Manager(String team, String name,String pos, int match){
+    super(team,name,pos);
+    posit=pos;
+    match_win=match;
+    pay= match_win*1000;
+}
+ public void printDetails() {
+   System.out.println(getNameTeam());
+   System.out.println("Team Role: " +posit);
+   System.out.println("Total Win: " +match_win);
+   System.out.println("Match Earning: " +pay+ "K");
+    }
+}
