@@ -1,0 +1,102 @@
+///////Assignment 1/////////
+public class BBAStudent extends Student{
+ 
+  public BBAStudent(){
+    setDepartment("BBA");
+   }
+  public BBAStudent(String n1){
+    setName(n1);
+    setDepartment("BBA");
+  }
+ }
+///////Assignment 2/////////
+public class CheckingAccount extends Account{
+  public static int count;
+  
+  public CheckingAccount(){
+    super(0.0);
+    count++;
+  }
+  public CheckingAccount(double sn){
+   super(sn); 
+   count++;
+  }
+}
+///////Assignment 3/////////
+//////////Cat Class////////
+public class Cat extends Animal{
+  public String co;
+  public String type;
+  
+  public Cat(String nam,int ag, String col,String n2){
+   super(nam,ag,col);
+   co=col;
+   type=n2;
+ }
+  public String info(){
+    return super.info()+"Breed: "+type;
+  }
+  public void makeSound(){
+  System.out.println(color+" color " +name+" Animal makes a sound");
+  }
+}
+//////////Dog Class/////////
+public class Dog extends Animal{
+ public String type;
+ public String co;
+ 
+ public Dog(String nam,int ag, String col,String n2){
+   super(nam,ag,col);
+   type=n2;
+   co=col;
+ }
+  public String info(){
+    return super.info()+"Breed: "+type;
+  }
+  public void makeSound(){
+  System.out.println(color+" color " +name+" Animal makes a sound");
+  }
+}
+///////Assignment 4/////////
+public class Vehicle2010 extends Vehicle {
+  
+ public Vehicle2010(){
+  this.x = 0;
+  this.y = 0;
+}
+ public void moveLowerLeft(){
+   moveLeft();
+   moveDown();
+ }
+ public void moveUpperRight(){ 
+  moveRight();
+  moveUp();
+}
+ public void moveLowerRight(){
+  moveRight();
+  moveDown();
+ }
+ public void moveUpperLeft(){
+   moveLeft();
+   moveUp();
+ }
+}
+///////Assignment 5/////////
+public class ComplexNumber extends RealNumber{
+ public double img;
+ 
+ public ComplexNumber() {
+   super(1.0);
+   img = 1.0;
+  }
+ public ComplexNumber(double t2, double t1) {
+   super(t2);
+   img=t1;
+ }
+ public String toString() {
+    return super.toString() + "\nImaginaryPart: " +img;
+    }
+}
+///////Assignment 6/////////
+///////Assignment 7/////////
+///////Assignment 8/////////
