@@ -1,0 +1,19 @@
+public class Manager extends SportsPerson{
+  public String posit;
+  public int  match_win;
+  public double pay;
+  
+  public Manager(String team, String name,String pos, int match){
+    super(team,name,pos);
+    posit=pos;
+    match_win=match;
+    pay= match_win*1000;
+}
+     public void printDetails() {
+        System.out.println(getNameTeam());
+        System.out.println("Team Role: " +posit);
+        System.out.println("Total Win: " +match_win);
+        System.out.println("Match Earning: " +pay+ "K");
+    }
+}
+ 
