@@ -1,16 +1,16 @@
 public class Dog extends Animal{
-  public String nam;
-  public int ag;
-  public String clr;
-  public String type;
-  
-  public Dog(String nm,int ag,String c3,String c4){
-    super(nm,ag,c4);
-    clr=c3;
-    nam=nm;
+ public String type;
+ public String co;
+ 
+ public Dog(String nam,int ag, String col,String n2){
+   super(nam,ag,col);
+   type=n2;
+   co=col;
+ }
+  public String info(){
+    return super.info()+"Breed: "+type;
   }
   public void makeSound(){
-    System.out.println(clr+" color "+nam+" is barking");
+  System.out.println(color+" color " +name+" Animal makes a sound");
   }
 }
-  
