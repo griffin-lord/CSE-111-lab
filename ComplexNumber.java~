@@ -1,0 +1,12 @@
+public class ComplexNumber extends RealNumber{
+  public double img;
+  public ComplexNumber(){
+    this.x=1.0;
+    this.y=1.0;
+  }
+  public ComplexNumber(double suf,double sub){
+    realNumber(suf);
+    img=sub;
+  }
+}
+  
