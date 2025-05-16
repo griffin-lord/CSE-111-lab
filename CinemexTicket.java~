@@ -1,0 +1,63 @@
+public class CinemexTicket extends MovieTicket {
+    public static int cou;
+    public String gen;
+    public String type;
+    public String ticID;
+    public boolean pay;
+
+    public CinemexTicket(String mov, String time, String ge, String dat) {
+        super(mov, dat,time, 0);
+        gen=ge;
+        type = seatTypes[0];
+        pay=false;
+        cou++;
+        generateTicketID();
+    }
+    public CinemexTicket(String mov, String time, String ge, String date, String type) {
+        super(mov,date,time, 0);
+        gen=ge;
+        seatType=type;
+        isPaid = false;
+        cou++;
+        generateTicketID();
+    }
+
+    public void generateTicketID() {
+        tickID = getMovie() +"-" + ticketCount;
+    }
+
+    public static int getTotalTickets() {
+        return ticketCount;
+    }
+
+    public void calculateTicketPrice() {
+        int iny= 0;
+        for (int i = 0; i < seatTypes.length; i++) {
+            if (seatTypes[i]==(seatType)) {
+                iny = i;
+                break;
+            }
+        }
+        double basePrice = seatPrices[seatIndex];
+        String[] timeParts = showtime.split(":");
+        int hour = Integer.parseInt(timeParts[0]);
+        if (hour >= 18 && hour <= 23) {
+            basePrice += basePrice*(nightShowCharge/100.0);
+        }
+        setPrice(basePrice);
+        System.out.println("Ticket price is calculated successfully.");
+    }
+    public String confirmPayment() {
+        if(pay==true){
+            return "Ticket price is already paid!";
+        }
+        pay= true;
+        return "Payment Successful.";
+    }
+
+    public String toString() {
+        return "Ticket ID: " + ticketID + "\nMovie: " + getMovie() + "\nShowtime: " + showtime + "\nDate: " + date
+                + "\nGenre: " + genre + "\nSeat Type: " + seatType + "\nPrice(tk): " + getPrice()
+                + "\nStatus: " +"Paid" : "Not Paid");
+    }
+}
