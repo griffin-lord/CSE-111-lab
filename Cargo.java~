@@ -22,21 +22,23 @@ public class Cargo{
 }
   public void load(){
     if(capa == 0){
-     System.out.println("Cargo "+carg+ "loaded for transport.");
-     System.out.println("Cargo Capacity: "+cap);
+     System.out.println("Cargo "+carg+" loaded for transport.");
+     carg++;
+     sw=true;
     }
     if(capa <= 10.0){
-      System.out.println("Cargo "+carg+ "loaded for transport.");
      System.out.println("Cannot load cargo, exceeds weight capacity.");  
     }
     if(capa>10.0){
-      System.out.println("Cargo Capacity: "+cap);
+     System.out.println("Cargo "+carg+" loaded for transport.");
+     carg++;
+     sw=true;
     }
-    carg++;
   }
-  public void unload(){
+   public void unload(){
     System.out.println("Cargo "+carg+" unloaded.");
     carg-=cap;
     System.out.println("Cargo Capacity: "+capa);
   }
+
 }

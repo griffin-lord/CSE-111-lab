@@ -11,9 +11,9 @@ public class Cargo{
     capa=n2;
     id+=1;
   }
-  public double capacity(){
+  public static double capacity(){
     cap=10.0;
-    capa+=cap;
+    cap+=capa;
     return capa;
   }
   public void details(){
@@ -22,15 +22,22 @@ public class Cargo{
 }
   public void load(){
     if(capa == 0){
-     System.out.println("Cargo Capacity: "+cap);
+     System.out.println("Cargo "+carg+" loaded for transport.");
+     carg++;
+     sw=true;
     }
-    if(capa <= 10.0){
+    if(capa >= 10.0){
      System.out.println("Cannot load cargo, exceeds weight capacity.");  
     }
-    if(capa>10.0){
-      System.out.println("Cargo Capacity: "+cap);
+    if(capa<10.0){
+     System.out.println("Cargo "+carg+" loaded for transport.");
+     carg++;
+     sw=true;
     }
-    System.out.println("Cargo "+carg+ "loaded for transport.");
-    carg++;
+  }
+   public void unload(){
+    System.out.println("Cargo "+carg+" unloaded.");
+    carg-=cap;
+    System.out.println("Cargo Capacity: "+capa);
   }
 }
