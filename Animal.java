@@ -1,9 +1,16 @@
-public class Animal{ 
-  public int legs = 4;
-  public String sound = "Not defined";
-  
-  public void details(){
-    System.out.println("Legs: "+legs);
-    System.out.println("Sound: "+sound);
-  }
+public class Animal {
+    public String name;
+    public int age;
+    public String color;
+    public Animal(String name, int age, String color) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+    }
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+    public String info() {
+        return "Name: "+name+"\nAge: "+age+"\nColor: "+color+"\n";
+    }
 }
