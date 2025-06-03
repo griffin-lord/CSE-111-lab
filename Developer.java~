@@ -1,0 +1,15 @@
+public class Developer extends Employee {
+ public String lang;
+
+ public Developer(String nam,double base,int wor,String la) {
+       super(nam,base,wor);
+        lang=la;
+    }
+  public void calculateSalary() {
+     if (language=="Java") {
+    setBaseSalary(getBaseSalary()+700);
+    }
+    System.out.println("Language: " + lang);
+    System.out.println("Final Salary: $" + getBaseSalary());
+  }
+}
